@@ -40,11 +40,11 @@ stories:
     - requested_slot: ask_insurance_type
   - slot_was_set:
     - ask_insurance_type: Home
-   - slot_was_set:
+  - slot_was_set:
     - requested_slot: ask_state
   - slot_was_set:
     - ask_state: JHR
-   - slot_was_set:
+  - slot_was_set:
     - requested_slot: ask_quote_number_persons
   - slot_was_set:
     - ask_quote_number_persons: null 
