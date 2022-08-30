@@ -1,0 +1,101 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - quote
+
+
+forms:
+  quote_form:
+    required_slots:
+      - ask_insurance_type
+      - ask_state
+      - ask_quote_number_persons
+
+
+slots:
+  ask_insurance_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+      conditions:
+        - active_loop: quote_form
+          requested_slot: ask_insurance_type
+
+
+  ask_state:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+      conditions:
+        - active_loop: quote_form
+          requested_slot: ask_state
+
+  ask_quote_number_persons:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+      conditions:
+        - active_loop: quote_form
+          requested_slot: ask_quote_number_persons
+
+
+
+responses:
+  utter_greet:
+  - text: "Selamat pagi manusia"
+
+  utter_cheer_up:
+  - text: "Inilah sesuatu imej yang boleh bersorak kamu :)"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "adalah imej itu membantu anda?"
+
+  utter_happy:
+  - text: "Hebat ! Teruskan"
+
+  utter_goodbye:
+  - text: "Selamat Tinggal and Semongah jaya Manusia"
+
+  utter_iamabot:
+  - text: "Nama saya Alex bot. Saya daripada Rasa. Umur saya ialah 10,000 tahun"
+
+  utter_ask_insurance_type:
+  - text: "What insurance type you want?"
+
+  utter_ask_state:
+  - text: "What state you are?"
+
+  utter_ask_quote_number_persons:
+  - text: "How many person?"
+
+  utter_slots_value:
+  - text: "Your insurans type is {ask_insurance_type}, 
+           Your state is {ask_state},
+           There are {ask_quote_number_persons} people."
+  
+  utter_submits:
+  - text: "OKAY submitted"
+  
+
+
+actions:
+- utter_greet
+- utter_slots_value
+- utter_submits
+- validate_quote_form
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
