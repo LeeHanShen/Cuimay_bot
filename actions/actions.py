@@ -31,11 +31,10 @@ class validateQuoteForm(FormValidationAction):
 
         """Validate Insurance Type"""
         # insurance_type = tracker.get_slot("insurance_type")
-        insurance_type = slot_value
-        if insurance_type.lower() not in allowed_insurance_type:
+        if slot_value.lower() not in allowed_insurance_type:
             dispatcher.utter_message(text=f"We only provide Health/Home/Life")
             return {"insurance_type":None}
-        return {"insurance_type":insurance_type}
+        return {"insurance_type":slot_value}
 
     def validate_state(
         self,
@@ -47,11 +46,11 @@ class validateQuoteForm(FormValidationAction):
 
         """Validate state"""
         # state = tracker.get_slot("ask_state")
-        state = slot_value
-        if state not in allowed_states:
+        
+        if slot_value not in allowed_states:
             dispatcher.utter_message(text=f"We only have JHR and KDH")
-            return {"states":None}
-        return {"states":state}
+            return {"state":None}
+        return {"state":slot_value}
 
         
 
