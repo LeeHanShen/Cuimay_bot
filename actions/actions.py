@@ -30,8 +30,8 @@ class validateQuoteForm(FormValidationAction):
     ) -> Dict[Text,Any]:
 
         """Validate Insurance Type"""
-        insurance_type = tracker.get_slot("ask_insurance_type")
-        # insurance_type = slot_value
+        # insurance_type = tracker.get_slot("insurance_type")
+        insurance_type = slot_value
         if insurance_type.lower() not in allowed_insurance_type:
             dispatcher.utter_message(text=f"We only provide Health/Home/Life")
             return {"insurance_type":None}
@@ -46,8 +46,8 @@ class validateQuoteForm(FormValidationAction):
     ) -> Dict[Text,Any]:
 
         """Validate state"""
-        state = tracker.get_slot("ask_state")
-        # state = slot_value
+        # state = tracker.get_slot("ask_state")
+        state = slot_value
         if state not in allowed_states:
             dispatcher.utter_message(text=f"We only have JHR and KDH")
             return {"states":None}
