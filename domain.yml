@@ -9,6 +9,8 @@ intents:
   - mood_unhappy
   - bot_challenge
   - request_quote
+  - inform
+  # - request_quote_form
 
 entities:
   - insurance_type
@@ -29,8 +31,8 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_entity
-      - entites: insurance_type
-      conditions:
+        entity: insurance_type
+        conditions:
         - active_loop: quote_form
           requested_slot: insurance_type
 
@@ -40,20 +42,14 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_entity
-      - entites: state
-      conditions:
-        - active_loop: quote_form
-          requested_slot: state
+        entity: state
 
   quote_number_persons:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
-      - entities: quote_number_persons
-      conditions:
-        - active_loop: quote_form
-          requested_slot: quote_number_persons
+        entity: quote_number_persons
 
 
 
