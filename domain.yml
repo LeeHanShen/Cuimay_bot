@@ -28,7 +28,7 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entites
+      - type: from_entity
       - entites: insurance_type
       conditions:
         - active_loop: quote_form
@@ -39,7 +39,7 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entites
+      - type: from_entity
       - entites: state
       conditions:
         - active_loop: quote_form
@@ -49,7 +49,7 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entites
+      - type: from_entity
       - entities: quote_number_persons
       conditions:
         - active_loop: quote_form
