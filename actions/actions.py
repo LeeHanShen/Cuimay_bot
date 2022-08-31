@@ -34,6 +34,8 @@ class validateQuoteForm(FormValidationAction):
         if slot_value.lower() not in allowed_insurance_type:
             dispatcher.utter_message(text=f"We only provide Health/Home/Life")
             return {"insurance_type":None}
+        
+        dispatcher.utter_message(text=f"Good Job! U have chosen {slot_value}.")
         return {"insurance_type":slot_value}
 
     def validate_state(
@@ -50,6 +52,8 @@ class validateQuoteForm(FormValidationAction):
         if slot_value not in allowed_states:
             dispatcher.utter_message(text=f"We only have JHR and KDH")
             return {"state":None}
+
+        dispatcher.utter_message(text=f"Good Job! U have chosen {slot_value} as your state.")
         return {"state":slot_value}
 
         
