@@ -68,4 +68,10 @@ examples: |
     - manakah kamu tinggal?
     - awak dari mana?
 
+- intent: inform
+  examples: |
+    - I want [Home](insurance_type) insurance
+    - I choose [JHR](state)
+    - i want [1](quote_number_persons)
+    - I want [Home](insurance_type) insurance, [JHR](state),[1](quote_number_persons)
 
