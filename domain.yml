@@ -8,45 +8,45 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - quote
+  - request_quote
 
 
 forms:
   quote_form:
     required_slots:
-      - ask_insurance_type
-      - ask_state
-      - ask_quote_number_persons
+      - insurance_type
+      - state
+      - quote_number_persons
 
 
 slots:
-  ask_insurance_type:
+  insurance_type:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
       conditions:
         - active_loop: quote_form
-          requested_slot: ask_insurance_type
+          requested_slot: insurance_type
 
 
-  ask_state:
+  state:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
       conditions:
         - active_loop: quote_form
-          requested_slot: ask_state
+          requested_slot: state
 
-  ask_quote_number_persons:
+  quote_number_persons:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
       conditions:
         - active_loop: quote_form
-          requested_slot: ask_quote_number_persons
+          requested_slot: quote_number_persons
 
 
 
@@ -90,6 +90,9 @@ responses:
 
 
 actions:
+- utter_ask_insurance_type
+- utter_ask_state
+- utter_ask_quote_number_persons
 - utter_greet
 - utter_slots_value
 - utter_submits
