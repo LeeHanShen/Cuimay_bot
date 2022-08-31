@@ -10,6 +10,10 @@ intents:
   - bot_challenge
   - request_quote
 
+entities:
+  - insurance_type
+  - state
+  - quote_number_persons
 
 forms:
   quote_form:
@@ -24,8 +28,9 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-    conditions:
+      - type: from_entites
+      - entites: insurance_type
+      conditions:
         - active_loop: quote_form
           requested_slot: insurance_type
 
@@ -34,8 +39,9 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-    conditions:
+      - type: from_entites
+      - entites: state
+      conditions:
         - active_loop: quote_form
           requested_slot: state
 
@@ -43,8 +49,9 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-    conditions:
+      - type: from_entites
+      - entities: quote_number_persons
+      conditions:
         - active_loop: quote_form
           requested_slot: quote_number_persons
 
@@ -80,9 +87,9 @@ responses:
   - text: "How many person?"
 
   utter_slots_value:
-  - text: "Your insurans type is {ask_insurance_type}, 
-           Your state is {ask_state},
-           There are {ask_quote_number_persons} people."
+  - text: "Your insurans type is {insurance_type}, 
+           Your state is {state},
+           There are {quote_number_persons} people."
   
   utter_submits:
   - text: "OKAY submitted"
