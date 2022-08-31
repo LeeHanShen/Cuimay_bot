@@ -32,7 +32,7 @@ stories:
 - story: interactive_story_1
   steps:
   - intent: greet
-  - action: utter_great
+  - action: utter_greet
   - intent: request_quote
   - action: quote_form
   - active_loop: quote_form
@@ -49,5 +49,5 @@ stories:
   - slot_was_set:
     - quote_number_persons: null 
   - active_loop: null
-  - action: utter_submit
+  - action: utter_submits
   - action: utter_slots_values
