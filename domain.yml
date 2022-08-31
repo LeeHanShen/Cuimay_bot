@@ -25,7 +25,7 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_text
-      conditions:
+    conditions:
         - active_loop: quote_form
           requested_slot: insurance_type
 
@@ -35,7 +35,7 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_text
-      conditions:
+    conditions:
         - active_loop: quote_form
           requested_slot: state
 
@@ -44,7 +44,7 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_text
-      conditions:
+    conditions:
         - active_loop: quote_form
           requested_slot: quote_number_persons
 
