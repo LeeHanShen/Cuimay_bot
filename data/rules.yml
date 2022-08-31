@@ -12,13 +12,13 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Active Quote Form
+- rule: Activate Quote Form
   steps:
   - intent: request_quote
   - action: quote_form
   - active_loop: quote_form
 
-- rule: Submit form
+- rule: Submit Quote form
   condition:
   - active_loop: quote_form
   steps:
@@ -28,3 +28,12 @@ rules:
     - requested_slot: null
   - action: utter_submit
   - action: utter_slots_values
+
+- rule: Interruption in Pizza Form
+  condition:
+  - active_loop: quote_form
+  steps:
+  - intent: bot_challenge
+  - action: utter_iambot
+  - action: quote_form
+  - active_loop: quote_form
