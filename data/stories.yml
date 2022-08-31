@@ -39,15 +39,19 @@ stories:
   - slot_was_set:
     - requested_slot: insurance_type
   - slot_was_set:
-    - insurance_type: null
+    - insurance_type: Home
   - slot_was_set:
     - requested_slot: state
   - slot_was_set:
-    - state: null
+    - state: JHR
   - slot_was_set:
     - requested_slot: quote_number_persons
   - slot_was_set:
-    - quote_number_persons: null 
+    - quote_number_persons: 1 
+  - slot_was_set:
+    - requested_slot: null
   - active_loop: null
   - action: utter_submits
-  - action: utter_slots_values
+  - action: utter_slots_value
+  - intent: goodbye
+  - action: utter_goodbye
