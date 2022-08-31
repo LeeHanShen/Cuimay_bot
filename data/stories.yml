@@ -37,17 +37,17 @@ stories:
   - action: quote_form
   - active_loop: quote_form
   - slot_was_set:
-    - requested_slot: ask_insurance_type
+    - requested_slot: insurance_type
   - slot_was_set:
-    - ask_insurance_type: Home
+    - insurance_type: Home
    - slot_was_set:
-    - requested_slot: ask_state
+    - requested_slot: state
   - slot_was_set:
-    - ask_state: JHR
+    - state: JHR
    - slot_was_set:
-    - requested_slot: ask_quote_number_persons
+    - requested_slot: quote_number_persons
   - slot_was_set:
-    - ask_quote_number_persons: null 
+    - quote_number_persons: null 
   - active_loop: null
   - action: utter_submit
   - action: utter_slots_values
